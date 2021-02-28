@@ -42,7 +42,7 @@ def find_template(temp_file):
     template_dir_path = get_template_dir_path()
     temp_file_path = os.path.join(template_dir_path, temp_file)
     if not os.path.exists(temp_file_path):
-        logger.critical
+
         raise NoTemplateError('Could not find {}'.format(temp_file))
     return temp_file_path
 

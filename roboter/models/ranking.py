@@ -67,7 +67,9 @@ class RankingModel(CsvModel):
 
     def save(self, force=True):
         """Save data to csv file."""
+
         # TODO (jsakai) Use locking mechanism for avoiding dead lock issue
+
         logger.info({
             'action': 'save',
             'csv_file': self.csv_file,
@@ -90,6 +92,11 @@ class RankingModel(CsvModel):
             'force': force,
             'status': 'success'
 
+        })
+
+        logger.info({
+            'action': 'save',
+            'status': 'success'
         })
 
     def get_most_popular(self, not_list=None):
